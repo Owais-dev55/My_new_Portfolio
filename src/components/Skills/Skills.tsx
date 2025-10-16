@@ -51,7 +51,7 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <div className="h-screen w-[90%] border rounded-3xl justify-around flex flex-col  mx-auto">
+    <div id="#Skills" className="h-screen w-[90%] border rounded-3xl justify-around flex flex-col  mx-auto">
       <motion.div
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}

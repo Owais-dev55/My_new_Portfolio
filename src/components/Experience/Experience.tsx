@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, {  useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Briefcase, Calendar } from "lucide-react";
 
