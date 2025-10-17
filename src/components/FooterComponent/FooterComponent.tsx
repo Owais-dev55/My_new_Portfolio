@@ -6,7 +6,7 @@ import Link from "next/link"
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-border bg-card/30">
+    <footer className="border-t border-border bg-card/30 font-[Montserrat]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">

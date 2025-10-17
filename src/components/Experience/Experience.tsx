@@ -63,7 +63,7 @@ const Experience = () => {
 
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   return (
-    <section className="bg-div/30 py-32 relative" ref={containerRef}>
+    <section id="experience" className="bg-div/30 py-32 relative font-[Montserrat]" ref={containerRef}>
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

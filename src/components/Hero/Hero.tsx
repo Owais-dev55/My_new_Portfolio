@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16  font-[Montserrat]"
     >
       <div className="absolute inset-0 z-0">
         <Hero3DScene />
