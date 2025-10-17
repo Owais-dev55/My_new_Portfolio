@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono , Montserrat, Poppins, Roboto, Urbanist } from "next/font/google";
+import { Geist, Geist_Mono , Montserrat } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
 

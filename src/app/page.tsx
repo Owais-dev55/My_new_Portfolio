@@ -4,7 +4,7 @@ import  Footer  from "../components/FooterComponent/FooterComponent";
 import { Hero } from "@/components/Hero/Hero";
 import Navbar from "@/components/Navbar/Navbar";
 import Skills from "@/components/Skills/Skills";
-// import Projects from "@/components/Projects/Projects";
+import Projects from "@/components/Projects/Projects";
 import { ScrollToTop } from "@/components/Scroll-to-Top/Scroll-to-Top";
 import Testimonial from "@/components/Testimonial/Testimonial";
 
@@ -13,7 +13,7 @@ export default function Home() {
    <div>
     <Navbar />
     <Hero />
-    {/* <Projects /> */}
+    <Projects />
     <Skills />
     <Experience />
     <Testimonial />

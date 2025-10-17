@@ -94,36 +94,35 @@ export function Hero() {
             transition={{ delay: 1, duration: 0.8 }}
             className="flex flex-wrap gap-4 justify-center mb-12"
           >
-  <div className="flex items-center gap-4">
-  {/* Contact Me Button */}
-  <Link href="#contact">
-    <motion.button
-      whileHover={{ scale: 1.02 }}
-      transition={{ duration: 0.2 }}
-      className="relative overflow-hidden bg-chart-2 border border-foreground px-8 py-2 rounded-md flex items-center justify-center group"
-    >
-      <span className="relative z-10 flex items-center text-foreground group-hover:text-background transition-colors">
-        Contact Me
-        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-      </span>
-      <motion.div
-        className="absolute inset-0 bg-foreground"
-        initial={{ x: "-100%" }}
-        whileHover={{ x: 0 }}
-        transition={{ duration: 0.3 }}
-      />
-    </motion.button>
-  </Link>
+            <div className="flex items-center gap-4">
+              {/* Contact Me Button */}
+              <Link href="#contact">
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                  className="relative overflow-hidden bg-chart-2 border border-foreground px-8 py-2 rounded-md flex items-center justify-center group"
+                >
+                  <span className="relative z-10 flex items-center text-foreground group-hover:text-background transition-colors">
+                    Contact Me
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                  <motion.div
+                    className="absolute inset-0 bg-foreground"
+                    initial={{ x: "-100%" }}
+                    whileHover={{ x: 0 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.button>
+              </Link>
 
-  <Link href="#projects">
-    <button className="group bg-transparent border border-foreground px-8 py-2 rounded-md flex items-center justify-center hover:bg-chart-2 transition-colors">
-      <span className="text-foreground group-hover:text-background transition-colors">
-        View Projects
-      </span>
-    </button>
-  </Link>
-</div>
-
+              <Link href="#projects">
+                <button className="group bg-transparent border border-foreground px-8 py-2 rounded-md flex items-center justify-center hover:bg-chart-2 transition-colors">
+                  <span className="text-foreground group-hover:text-background transition-colors">
+                    View Projects
+                  </span>
+                </button>
+              </Link>
+            </div>
           </motion.div>
 
           <motion.div
@@ -133,13 +132,21 @@ export function Hero() {
             className="flex gap-6"
           >
             {[
-              { icon: Github, href: "https://github.com", label: "GitHub" },
+              {
+                icon: Github,
+                href: "https://github.com/Owais-dev55",
+                label: "GitHub",
+              },
               {
                 icon: Linkedin,
-                href: "https://linkedin.com",
+                href: "https://www.linkedin.com/in/owais-khilji-333owais2386556",
                 label: "LinkedIn",
               },
-              { icon: Mail, href: "mailto:hello@example.com", label: "Email" },
+              {
+                icon: Mail,
+                href: "mailto:owaiskhiljee6556@gmail.com",
+                label: "Email",
+              },
             ].map((social, index) => (
               <motion.a
                 key={social.label}
