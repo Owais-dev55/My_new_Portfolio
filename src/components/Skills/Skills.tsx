@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { Github } from "lucide-react";
 import React from "react";
 
 const skillCategories = [
@@ -10,7 +11,7 @@ const skillCategories = [
       { name: "Next.js", icon: "▲" },
       { name: "TypeScript", icon: "📘" },
       { name: "TailwindCSS", icon: "🎨" },
-      { name: "HTML/CSS", icon: "🌐" },
+      // { name: "HTML/CSS", icon: "🌐" },
       { name: "Framer Motion", icon: "✨" },
     ],
   },
@@ -21,7 +22,6 @@ const skillCategories = [
       { name: "Express", icon: "🚂" },
       { name: "Python", icon: "🐍" },
       { name: "REST APIs", icon: "🔌" },
-      { name: "GraphQL", icon: "◈" },
       { name: "WebSockets", icon: "🔄" },
     ],
   },
@@ -30,8 +30,7 @@ const skillCategories = [
     skills: [
       { name: "MongoDB", icon: "🍃" },
       { name: "PostgreSQL", icon: "🐘" },
-      { name: "Redis", icon: "🔴" },
-      { name: "Supabase", icon: "⚡" },
+      { name: "Firebase", icon: "🔥" },
       { name: "Prisma", icon: "💎" },
       { name: "MySQL", icon: "🐬" },
     ],
@@ -39,11 +38,10 @@ const skillCategories = [
   {
     title: "Tools & Others",
     skills: [
-      { name: "Git", icon: "📦" },
-      { name: "Docker", icon: "🐳" },
-      { name: "AWS", icon: "☁️" },
+      { name: "Git", icon: <Github /> },
+      { name: "ThunderClient", icon: '⚡' },
+      { name: "NPM", icon: "📦" },
       { name: "Vercel", icon: "▲" },
-      { name: "Jest", icon: "🃏" },
       { name: "CI/CD", icon: "🔧" },
     ],
   },

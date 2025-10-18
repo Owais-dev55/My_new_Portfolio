@@ -11,7 +11,7 @@ const navItems = [
   { name: "Projects", href: "#projects" },
   { name: "Skills", href: "#skills" },
   { name: "Experience", href: "#experience" },
-  {name: "Testimonial" , href: "#testimonial"},
+  { name: "Testimonial", href: "#testimonial" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -31,10 +31,12 @@ const Navbar = () => {
   }, []);
   return (
     <motion.nav
-    initial={{ y: -100 }}
+      initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-[Montserrat] ${
-        isScrolled ? "bg-background text-muted-foreground backdrop-blur-lg border-b border-border" : "bg-transparent "
+        isScrolled
+          ? "bg-background text-muted-foreground backdrop-blur-lg border-b border-border"
+          : "bg-transparent "
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,7 +63,7 @@ const Navbar = () => {
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-muted-foreground hover:text-white transition-colors relative group"
+                className="text-sm font-medium text-muted-foreground transition-colors relative group"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
@@ -82,7 +84,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center gap-2">
             <ToogleTheme />
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-              <button  onClick={() => setIsOpen(!isOpen)}>
+              <button onClick={() => setIsOpen(!isOpen)}>
                 <AnimatePresence mode="wait">
                   {isOpen ? (
                     <motion.div
@@ -111,7 +113,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-       <AnimatePresence>
+      <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
@@ -126,7 +128,14 @@ const Navbar = () => {
                   key={item.name}
                   href={item.href}
                   className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2 border-b border-border last:border-0"
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const target = document.querySelector(item.href);
+                    if (target) {
+                      target.scrollIntoView({ behavior: "smooth" });
+                    }
+                    setTimeout(() => setIsOpen(false), 300);
+                  }}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}

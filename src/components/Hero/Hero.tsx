@@ -4,7 +4,7 @@ import { Hero3DScene } from "../3D-object/3D-object";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export function Hero() {
+export default function Hero() {
   return (
     <section
       id="home"
@@ -147,6 +147,7 @@ export function Hero() {
                 href: "mailto:owaiskhiljee6556@gmail.com",
                 label: "Email",
               },
+              
             ].map((social, index) => (
               <motion.a
                 key={social.label}
