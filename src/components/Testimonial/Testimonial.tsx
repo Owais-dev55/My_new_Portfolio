@@ -15,6 +15,7 @@ const testimonials = [
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
+      id="testimonial"
       className="relative w-full py-32 font-[Montserrat] bg-background dark:bg-div/30"
     >
       {/* Heading */}

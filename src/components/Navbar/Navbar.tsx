@@ -130,11 +130,20 @@ const Navbar = () => {
                   className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2 border-b border-border last:border-0"
                   onClick={(e) => {
                     e.preventDefault();
-                    const target = document.querySelector(item.href);
-                    if (target) {
-                      target.scrollIntoView({ behavior: "smooth" });
-                    }
-                    setTimeout(() => setIsOpen(false), 300);
+
+                    setIsOpen(false);
+
+                    setTimeout(() => {
+                      const target = document.querySelector(item.href);
+                      if (target) {
+                        const yOffset = -80;
+                        const y =
+                          target.getBoundingClientRect().top +
+                          window.pageYOffset +
+                          yOffset;
+                        window.scrollTo({ top: y, behavior: "smooth" });
+                      }
+                    }, 300);
                   }}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}

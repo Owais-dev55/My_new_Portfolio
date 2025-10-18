@@ -37,11 +37,11 @@ const projects = [
     isCodeAvailable: true,
   },
   {
-    title: "Social Media Dashboard",
+    title: "Vehicle Vins Report",
     description:
-      "Analytics dashboard for social media metrics with data visualization and automated reporting. CODE IS PRIVATE",
+      "Vehicle history report service providing detailed information on used cars via VIN lookup.",
     image: "/vehicle.png",
-    tech: ["React", "D3.js", "Python", "FastAPI"],
+    tech: ["Nextjs", "Paypal", "Tailwind CSS", "Hostinger Custom Domain"],
     github: "",
     demo: "https://vehiclevinsreport.com",
     isCodeAvailable: false,
@@ -83,7 +83,6 @@ export default function Projects() {
     </section>
   );
 }
-
 function ProjectCard({
   project,
   index,
@@ -104,6 +103,7 @@ function ProjectCard({
       className="overflow-hidden group border-2 hover:border-primary transition-all duration-300 rounded-lg font-[Montserrat]"
     >
       <div className="relative h-64 overflow-hidden">
+        {/* Image */}
         <motion.div
           animate={{ scale: isHovered ? 1.1 : 1 }}
           transition={{ duration: 0.4 }}
@@ -117,29 +117,29 @@ function ProjectCard({
           />
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isHovered ? 1 : 0 }}
+        <div
           className="absolute inset-0 bg-black/60 flex items-center justify-center gap-4
-                     md:opacity-0 md:group-hover:opacity-100 opacity-100"
+                     opacity-100 md:opacity-0 md:group-hover:opacity-100"
         >
           {project.isCodeAvailable && (
-            <button>
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github className="h-5 w-5 text-white" />
-              </a>
-            </button>
-          )}
-          <button>
-            <a href={project.demo} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="h-5 w-5 text-white" />
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white"
+            >
+              <Github className="h-5 w-5" />
             </a>
-          </button>
-        </motion.div>
+          )}
+          <a
+            href={project.demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white"
+          >
+            <ExternalLink className="h-5 w-5" />
+          </a>
+        </div>
       </div>
 
       <div className="p-6 space-y-4">
@@ -147,7 +147,7 @@ function ProjectCard({
         <p className="text-muted-foreground leading-relaxed">
           {project.description}
         </p>
-        {project.isCodeAvailable === false && (
+        {!project.isCodeAvailable && (
           <p className="text-sm italic text-red-500">Code is Private</p>
         )}
         <div className="flex flex-wrap gap-2">

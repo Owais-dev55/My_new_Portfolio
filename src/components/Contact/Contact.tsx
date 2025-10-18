@@ -4,9 +4,9 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 
 const cards = [
-  { icon: <Mail className="h-6 w-6" />, title: "Email", description: "hello@example.com" },
-  { icon: <Phone className="h-6 w-6" />, title: "Phone", description: "+1 (555) 123-4567" },
-  { icon: <MapPin className="h-6 w-6" />, title: "Location", description: "San Francisco, CA" },
+  { icon: <Mail className="h-6 w-6" />, title: "Email", description: "owaiskhiljee6556@gmail.com" },
+  { icon: <Phone className="h-6 w-6" />, title: "Phone", description: "+92 333 238 6556" },
+  { icon: <MapPin className="h-6 w-6" />, title: "Location", description: "Hyderabad, Pakistan" },
 ];
 
 const Contact = () => {
@@ -71,9 +71,9 @@ const Contact = () => {
             {cards.map((card, index) => (
               <div
                 key={index}
-                className="flex items-center gap-4 border rounded-lg p-6 shadow-sm hover:shadow-md transition"
+                className="flex items-center gap-3 border rounded-lg p-6 shadow-sm hover:shadow-md transition"
               >
-                <div className="p-3 bg-gray-100 rounded-lg text-muted-foreground">{card.icon}</div>
+                <div className="p-1 bg-gray-100 rounded-lg text-muted-foreground">{card.icon}</div>
                 <div>
                   <h3 className="font-semibold text-lg mb-1 text-muted-foreground">{card.title}</h3>
                   <p className="text-muted-foreground">{card.description}</p>
