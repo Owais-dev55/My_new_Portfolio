@@ -75,10 +75,10 @@ const Contact = () => {
               >
                 <div className="p-1 bg-gray-100 rounded-lg text-muted-foreground">{card.icon}</div>
                 <div className="min-w-0">
-  <h3 className="font-semibold text-lg mb-1 text-muted-foreground">{card.title}</h3>
-  <p className="text-muted-foreground break-words whitespace-normal">{card.description}</p>
-</div>
-              </div>
+                <h3 className="font-semibold text-lg mb-1 text-muted-foreground">{card.title}</h3>
+                <p className="text-muted-foreground break-words whitespace-normal">{card.description}</p>
+               </div>
+               </div>
             ))}
           </motion.div>
           <motion.div

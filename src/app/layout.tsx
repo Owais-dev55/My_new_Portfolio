@@ -22,6 +22,9 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Owais Khiljee - Developer Portfolio",
   description: "Hey! I'm Owais Khiljee, a passionate developer specializing in creating dynamic and responsive web applications. Welcome to my portfolio!",
+  icons: {
+    icon: "/favicon-32x32.png",
+  }
 };
 
 export default function RootLayout({
