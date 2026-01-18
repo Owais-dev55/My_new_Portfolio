@@ -5,9 +5,9 @@ import { Briefcase, Calendar } from "lucide-react";
 
 const experiences = [
   {
-    title: "Full Stack Developer Intern",
+    title: "Full Stack Developer",
     company: "Zetsol Technologies",
-    period: "June-2025 - July-2025",
+    period: "January-2025 - October-2025",
     description:
       "Worked on developing and optimizing web applications using modern frameworks and technologies. Gained hands-on experience in full-stack development and agile methodologies.",
     achievements: [
@@ -17,9 +17,9 @@ const experiences = [
     ],
   },
   {
-    title: "Frontend Developer",
+    title: "Junior Frontend Developer",
     company: "Verior",
-    period: "July-2025 - August-2025",
+    period: "August-2024 - January-2025",
     description:
       "Built responsive web applications with React and modern CSS. Worked closely with UX designers to implement intuitive user interfaces.",
     achievements: [
