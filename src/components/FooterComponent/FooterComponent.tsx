@@ -25,7 +25,7 @@ import Link from "next/link"
               <Github className="h-5 w-5" />
             </Link>
             <Link
-              href="https://www.linkedin.com/in/owais-khilji-333owais2386556"
+              href="https://www.linkedin.com/in/owais-khilji"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
