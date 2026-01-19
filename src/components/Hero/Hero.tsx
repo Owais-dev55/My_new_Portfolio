@@ -139,7 +139,7 @@ export default function Hero() {
               },
               {
                 icon: Linkedin,
-                href: "https://www.linkedin.com/in/owais-khilji-333owais2386556",
+                href: "https://www.linkedin.com/in/owais-khilji",
                 label: "LinkedIn",
               },
               {
