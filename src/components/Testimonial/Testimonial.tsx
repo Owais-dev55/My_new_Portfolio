@@ -6,8 +6,12 @@ import { motion } from "framer-motion";
 
 const Testimonial = () => {
 const testimonials = [ 
+  
+  { imageUrl: "/placeholder.png", name: "Alessandro", designation: "Fiverr", review: "Great experience working together. He was professional, responsive, and very knowledgeable throughout the project. He handled a fairly complex setup involving frontend deployment, backend integration, Stripe payments, webhooks, and environment configuration with clarity and precision. Communication was clear, issues were addressed quickly, and he was flexible when adjustments were needed.", },
+
   { imageUrl: "/aftab.jpeg", name: "Aftab Saraz", designation: "CEO & Co-Founder at Zetsol Technologies", review: "Owais delivered quality work within deadlines, showing strong technical skills and a great learning attitude during his internship at Zetsol Technologies. We appreciate his efforts and wish him continued success.", }
-  , { imageUrl: "/abdul haseeb.jpeg", name: "Abdul Haseeb", designation: "Founder & CEO at Verior", review: "Owais completed his internship as a Frontend Developer with excellence, delivering responsive and well-structured interfaces on time. He showed strong technical skills, creativity, and a great learning attitude.", }, { imageUrl: "/hashir.jpeg", name: "Hashir Shaikh", designation: "Senior Software Engineer at Zetsol Technologies", review: "I’ve worked with Owais on multiple projects at Zetsol Technologies and through freelance collaborations. He’s a skilled and reliable developer who consistently delivers quality work on time and is a great team player.", }, 
+  , 
+  { imageUrl: "/abdul haseeb.jpeg", name: "Abdul Haseeb", designation: "Founder & CEO at Verior", review: "Owais completed his internship as a Frontend Developer with excellence, delivering responsive and well-structured interfaces on time. He showed strong technical skills, creativity, and a great learning attitude.", } 
   ];
   return (
     <motion.section
