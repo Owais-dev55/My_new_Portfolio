@@ -1,10 +1,12 @@
 "use client";
 import { ArrowRight, Github, Linkedin, Mail, TreeDeciduous } from "lucide-react";
 import { Hero3DScene } from "../3D-object/3D-object";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Hero() {
+  const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
   return (
     <section
       id="home"
@@ -154,25 +156,48 @@ export default function Hero() {
               },
 
             ].map((social, index) => (
-              <motion.a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative group hover:scale-110 hover:cursor-pointer"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2 + index * 0.1 }}
-                whileHover={{ y: -5 }}
-              >
-                <social.icon className="h-6 w-6 text-muted-foreground group-hover:text-foreground transition-colors" />
-                <motion.div
-                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-foreground"
-                  initial={{ scaleX: 0 }}
-                  whileHover={{ scaleX: 1 }}
-                  transition={{ duration: 0.3 }}
-                />
-              </motion.a>
+              <div key={social.label} className="relative">
+                <AnimatePresence>
+                  {hoveredIcon === social.label && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: -40 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs px-2 py-1 rounded shadow-lg whitespace-nowrap z-50 pointer-events-none"
+                    >
+                      {social.label}
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-primary" />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+                <motion.a
+                  href={social.href}
+                  target={social.label === "Email" ? undefined : "_blank"}
+                  rel={social.label === "Email" ? undefined : "noopener noreferrer"}
+                  onClick={(e) => {
+                    if (social.label === "Email") {
+                      window.location.href = social.href;
+                      e.preventDefault();
+                    }
+                  }}
+                  className="relative group hover:scale-110 hover:cursor-pointer block"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.2 + index * 0.1 }}
+                  whileHover={{ y: -5 }}
+                  onMouseEnter={() => setHoveredIcon(social.label)}
+                  onMouseLeave={() => setHoveredIcon(null)}
+                >
+                  <social.icon className="h-6 w-6 text-muted-foreground group-hover:text-foreground transition-colors" />
+                  <motion.div
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-foreground"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.a>
+              </div>
             ))}
           </motion.div>
         </div>
