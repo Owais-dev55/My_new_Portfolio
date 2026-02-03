@@ -1,8 +1,8 @@
 
-import { Github, Linkedin, Mail} from "lucide-react"
+import { Github, Linkedin, Mail, TreeDeciduous } from "lucide-react"
 import Link from "next/link"
 
- function Footer() {
+function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
@@ -19,7 +19,7 @@ import Link from "next/link"
               href="https://github.com/Owais-dev55"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 hover:cursor-pointer"
               aria-label="GitHub"
             >
               <Github className="h-5 w-5" />
@@ -28,18 +28,27 @@ import Link from "next/link"
               href="https://www.linkedin.com/in/owais-khilji"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 hover:cursor-pointer"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-5 w-5" />
             </Link>
-           
+
             <Link
               href="mailto:owaiskhiljee6556@gmail.com"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 hover:cursor-pointer"
               aria-label="Email"
             >
               <Mail className="h-5 w-5" />
+            </Link>
+            <Link
+              href="https://linktree-owaisdev.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 hover:cursor-pointer"
+              aria-label="Linktree"
+            >
+              <TreeDeciduous className="h-5 w-5" />
             </Link>
           </div>
         </div>

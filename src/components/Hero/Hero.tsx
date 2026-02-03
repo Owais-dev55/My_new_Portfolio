@@ -1,5 +1,5 @@
 "use client";
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, TreeDeciduous } from "lucide-react";
 import { Hero3DScene } from "../3D-object/3D-object";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -147,14 +147,19 @@ export default function Hero() {
                 href: "mailto:owaiskhiljee6556@gmail.com",
                 label: "Email",
               },
-              
+              {
+                icon: TreeDeciduous,
+                href: "https://linktree-owaisdev.vercel.app",
+                label: "Linktree",
+              },
+
             ].map((social, index) => (
               <motion.a
                 key={social.label}
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative group"
+                className="relative group hover:scale-110 hover:cursor-pointer"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.2 + index * 0.1 }}
