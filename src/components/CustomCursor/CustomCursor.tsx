@@ -36,7 +36,7 @@ export default function CustomCursor() {
     canvas.style.position = "fixed";
     canvas.style.top = "0";
     canvas.style.left = "0";
-    canvas.style.zIndex = "48";
+    canvas.style.zIndex = "998";
     canvas.style.pointerEvents = "none";
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -141,7 +141,7 @@ export default function CustomCursor() {
       {/* Custom cursor pointer */}
       <div
         ref={cursorRef}
-        className="fixed z-50"
+        className="fixed z-[1000] pointer-events-none"
         style={{
           display: "none",
           transform: "translate(-50%, -50%)",
@@ -160,7 +160,7 @@ export default function CustomCursor() {
       {/* Highlight glow effect */}
       <div
         ref={highlightRef}
-        className="fixed z-49 rounded-full pointer-events-none"
+        className="fixed z-[999] rounded-full pointer-events-none"
         style={{
           display: "none",
           transform: "translate(-50%, -50%)",
