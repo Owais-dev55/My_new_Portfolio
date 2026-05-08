@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface Particle {
   x: number;
@@ -13,13 +13,42 @@ interface Particle {
 }
 
 export default function CustomCursor() {
+  const [enabled, setEnabled] = useState<boolean | null>(null);
   const cursorRef = useRef<HTMLDivElement>(null);
   const highlightRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const particlesRef = useRef<Particle[]>([]);
   const animationRef = useRef<number | null>(null);
 
+  // Detect touch / coarse-pointer devices and disable the custom cursor there.
   useEffect(() => {
+    if (typeof window === "undefined") {
+      setEnabled(false);
+      return;
+    }
+    const detect = () => {
+      const isTouchDevice =
+        "ontouchstart" in window ||
+        (navigator.maxTouchPoints && navigator.maxTouchPoints > 0) ||
+        (window.matchMedia &&
+          (window.matchMedia("(pointer: coarse)").matches ||
+            window.matchMedia("(hover: none)").matches));
+
+      // Also treat narrow viewports as non-desktop (avoid devtools emulation showing cursor)
+      const isNarrow = window.innerWidth <= 1024;
+
+      setEnabled(!isTouchDevice && !isNarrow);
+    };
+
+    detect();
+    const onResize = () => detect();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  useEffect(() => {
+    if (enabled !== true) return; // Only run the cursor logic on non-touch devices
+
     const cursor = cursorRef.current;
     const highlight = highlightRef.current;
     const container = containerRef.current;
@@ -134,7 +163,12 @@ export default function CustomCursor() {
       }
       canvas.remove();
     };
-  }, []);
+  }, [enabled]);
+
+  // If detection finished and it's a touch device, render nothing.
+  if (enabled === false) return null;
+  // While detection is pending, render nothing to avoid flicker/hydration mismatch.
+  if (enabled === null) return null;
 
   return (
     <div ref={containerRef} className="pointer-events-none">
