@@ -93,6 +93,7 @@ export default function CustomCursor() {
           life: 1,
           maxLife: 1,
           size: Math.random() * 3 + 1,
+
         };
         particlesRef.current.push(particle);
       }
